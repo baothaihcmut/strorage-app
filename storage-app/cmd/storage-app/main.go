@@ -74,7 +74,7 @@ func main() {
 
 	//  Initialize Comment Repository & Interactor
 	commentRepository := commentRepo.NewCommentRepository(mongoDatabase)
-	commentInteractor := commentInteractors.NewCommentInteractor(commentRepository)
+	commentInteractor := commentInteractors.NewCommentInteractor(commentRepository, permissionRepository)
 	commentController := commentControllers.NewCommentController(commentInteractor)
 
 	//  Set up routes for file permission & comment
